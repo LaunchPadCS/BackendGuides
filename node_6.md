@@ -8,7 +8,7 @@ In very simple web applications, every url on a website just points to a single 
 In more complex websites, a URL doesn't always point to a specific file. Instead, we use a `router` to read the url and decide what code needs to run. We define multiple different `routes`, where each route is a rule about how to handle a certain URL pattern. You might have a route that says "run this function for any url that looks like `mySite.com/users/<some_user_id>`. In other words, a route links a set of URL's to a function that handles requests made to those URL's.
 
 ### Routing in Express
-Routing can be complicated if you're writing it from scratch, but express makes it easy to set up. We can just use the `app.get()` and `app.post` functions to configure GET and POST routes respectively.
+Routing can be complicated if you're writing it from scratch, but express makes it easy to set up. We can just use the `app.get()` and `app.post()` functions to configure GET and POST routes respectively.
 
 For example, this code would configure 3 different routes for a webserver:
 ```js
@@ -44,4 +44,4 @@ app.get('/test/:name', function(req,res){
 });
 ```
 
-So in this example, if we sent a request to `myWebsite.com/test/Steve`, we would see "Hello Steve!" sent back. 
+So in this example, if we sent a request to `myWebsite.com/test/Steve`, we would see "Hello Steve!" sent back.

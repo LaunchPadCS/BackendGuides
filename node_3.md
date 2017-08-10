@@ -1,6 +1,6 @@
 ## Node Callbacks & Async Operations
 
-Because of the way Node works, there's a few quirks you'll need to get used to before moving any further. The main thing that can throw people off is callbacks and async operations. We'll explain how both of those work and how you can take advantage of them in your node programs.  
+Because of the way Node works, there's a few quirks you'll need to get used to before moving any further. The main things that can throw people off are `callbacks` and `asynchronous functions`. We'll explain how both of those work and how you can take advantage of them in your node programs.  
 
 ### Threading Basics
 The first concept that's important to understand is what a `Thread` is. Basically, a CPU can only process one instruction at a time, line by line, in order. To speed things up, modern computers have multi-core CPU's that are able to process multiple "threads" of instructions at the same time. Many programming languages allow you to take advantage of this and run certain parts of code on additional processors.
@@ -8,7 +8,9 @@ The first concept that's important to understand is what a `Thread` is. Basicall
  You don't need to worry about the specifics of threading for node, but if you're curious, here's the basic idea: Internally, Node executes all your code inside a single main thread, but all I/O operations are ultimately passed onto parallel worker threads. If that doesn't make any sense to you, don't worry about it. If you're interested in learning more about how JavaScript handles threads in general, [this](https://www.youtube.com/watch?v=8aGhZQkoFbQ) talk from Philip Roberts is an amazing explanation.
 
 ### Synchronous vs Asynchronous
-If you're programmed before, you're probably use to `Synchronous` execution. Synchronous code executes in order, line by line, until the program ends. If one function takes a long time to execute, the program will wait until that function finishes before moving on. For example, you may have something like this:
+If you're programmed before, you're probably use to `Synchronous` execution. Synchronous code executes in order, line by line, until the program ends. If one function takes a long time to execute, the program will wait until that function finishes before moving on. Functions that work this way are also called `blocking` functions.
+
+For example, you may have something like this:
 
 ```js
 console.log("Hello World");
@@ -16,7 +18,7 @@ superSlowFunction(); //This function takes 10 seconds to finish
 console.log("All Done!"); //This message prints 10 seconds later
 ```
 
-On the other hand, you can have `Asynchronous` code. With an `Asynchronous` function, the program will move on before the function has finished. Instead, the function will finish in the background while the main program keeps going. Here's an example:
+On the other hand, you can have `Asynchronous` code. With an `Asynchronous` function, the program will move on before the function has finished. The function will finish in the background while the main program keeps going. Here's an example:
 
 ```js
 console.log("Hello World");

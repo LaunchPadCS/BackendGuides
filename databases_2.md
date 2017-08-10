@@ -7,7 +7,7 @@ You don't need to install mongoDB to learn these basics, but if you want to you 
 
 
 ###Structuring MongoDB data
-MongoDB data is organized into `collections` and `documents`.  A collection is a group of documents bunched together. Usually a collection will represent a specific type of object in your system (for example you might have a collection for users or posts). Documents hold the actual data for the objects.
+MongoDB data is organized into `collections` and `documents`.  A collection is just a group of documents bunched together. Usually a collection will represent a specific type of object in your system (for example you might have a collection for users or posts). Documents hold the actual data for the objects.
 
 Here's what a document for a blog post might look like. It contains information about the post, as well as a special `_id` value to identify it.
 

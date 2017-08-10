@@ -12,7 +12,7 @@ npm init
 npm install express --save
 ```
 
-There's a few important functions in express, but they follow the same basic idea. You use these functions to set up your server `routes`, and then once it's set up, express will handle the rest. For our purposes, a route is basically just a url on your server.
+There's a few important functions in express, but they follow the same basic idea. You use these functions to set up your server `routes`, and then once they're ready, express will handle the rest. For our purposes, a route is basically just a url on your server.
 
 Here's some of the most common functions you'll use in express:
 
@@ -45,7 +45,7 @@ There's a lot going on here, so let's break it down. The `get()` function we cal
 
 In our example, when a user visits the `/` url we want express to run the function we provided. Express will automatically set the `request` and `response` parameters in this function, so we can use those if we need to. In this example we use `response.send()` to send data back to the user.
 
->Note that you can only call response.send() once. After it's been sent, the connection is closed and no more information can be passed. If you call it a second time in the same handler method, an error will be thrown.
+>Note that you can only call response.send() once. After it's been sent, the connection is closed and no more information can be passed. If you call it a second time in the same handler function, an error will be thrown.
 
 Finally, we use `listen()` to express we're ready to start up the server. This function takes a port number as it's argument. If you're not familiar with ports, the basic idea is that they're like lanes on the internet highway to your computer. Only one program can use each port at a time. We ask it to run on port 8080 in this example, but you can use any port that isn't already being used on your laptop.
 
@@ -54,4 +54,4 @@ Finally, we pass a callback function to our `listen()` method. Once express has 
 ### Running an Express App
 Now that everything is set up, you could run your express server with `node myServer.js`. Don't forget to install express with `npm install` if you didn't earlier. If you visit [http://localhost:8080](http://localhost:8080) in your browser while the server is running, you'll see the "Hello World" message printed.
 
- The server will keep running until you stop it, so you  can kill the program with `ctrl+c` inside the terminal. 
+ The server will keep running until you stop it, so you  can kill the program with `ctrl+c` inside the terminal.

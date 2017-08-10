@@ -3,9 +3,11 @@
 Because node is just JavaScript, it's pretty easy to pick up. If you're not already familiar with it, we'll quickly go over the basics here.
 
 ### Hello World
-The first thing you'll need to do is install node. You can grab it from their website [here](https://nodejs.org/en/).  It runs on pretty much anything, and will allow you run your programs locally for testing.
+The first thing you'll need to do is install node. You can grab it from their website [here](https://nodejs.org/en/).
 
-For the most part, a node program works pretty much like any normal JavaScript program. Because node is a command line tool, any output will be directed into the terminal instead of the browsers debugging tools. Here's a sample program that would print some output into the terminal:
+For the most part, a node program works pretty much like any normal JavaScript program. If you're brand new to JavaScript you might want to take a look a this [this](https://launchpadcs.gitbooks.io/webdev-guides/content/js_01.html) page where we cover some of the basics.
+
+Because node is a command line tool, any output will be directed into the terminal instead of the browser's debugging tools. Here's a sample program that would print some output into the terminal:
 
 ```js
 //Say Hello
@@ -28,21 +30,22 @@ To run a node program, just use the `node` command from the terminal once you've
 Just like JavaScript in the browser, node programs don't have an entry point or main method. Instead, execution just starts at the top of the file you specify in your terminal.
 
 
-### Require() and module.exports
+### JavaScript Modules
+In 2015, the `ES6` standard of JavaScript was released. This specification allows you to use an `import` statement to load objects from one file into another, sort of like how importing works in Java or C. This is *not* supported in Node, since it was created before this standard existed.
 
-Node programs can get pretty large, so the developers have created the  `require()` method to help organize code. Developers can `export` a value from one file and then import it into another with `require()`.
+Luckily, node has it's own custom module system that works in a similar way. Developers can `export` a value from one file and then import it into another with the `require()` function.
 
-Let's say you have two files: `main.js` and `passwords.js`. You have some passwords in `passwords.js` that you want to use inside `main.js`. First, you set the `module.exports` variable inside `passwords.js` to whatever you want to share:
+Let's say you have two files: `main.js` and `passwords.js`. You have some password variables in `passwords.js` that you want to use inside `main.js`. First, you set the `module.exports` variable inside `passwords.js` to whatever you want to share:
 
 ```js
-//Inside passwords.js
+//Inside the passwords.js file
 var myPassword = "Password123";
 module.exports = myPassword; //Let node know you want to share this variable with other files
 ```
 Now, any other file can load the contents of the `module.exports` variable using the `require()` function. Here's an example:
 
 ```js
-//Inside main.js
+//Inside the main.js file
 var secretPassword = require('passwords.js'); //Load the variable we exported
 console.log("The password is: " + secretPassword);
 ```

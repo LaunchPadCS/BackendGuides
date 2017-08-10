@@ -4,13 +4,13 @@ Node is a powerful tool on it's own, but it's real strength comes from the huge 
 ###What is npm?
 `npm` is a program that allows you to easily install libraries or tools made by other node developers. It's installed automatically when you download node, so if you have node then you should already be set up to use npm.
 
-Here's how it works. First, other developers will upload a `module` they created into the [npm website](https://www.npmjs.com/). A module is just a reusable chunk of code created to do a specific thing. Lets say we want to install [this](https://www.npmjs.com/package/cows) cow module for some reason. All we need to do is open the command line in the same folder as our project and run:
+Here's how it works. First, other developers will upload a `module` they created onto the [npm website](https://www.npmjs.com/). A module is just a reusable chunk of code created to do a specific thing. Lets say we want to install [this](https://www.npmjs.com/package/cows) cow module for some reason. All we need to do is open the command line in the same folder as our project and run:
 
 ```bash
 #This will install the "cows" module into the current folder
 npm install cows
 ```
-It's really that easy! npm will download the module into a folder called `node_modules`. Once the download finishes, you can load it up using `require()` like we showed earlier. When loading modules, you just use the name of the module (don't include the `.js`).  Here's an example:
+It's really that easy! npm will download the module into a folder called `node_modules`. Once the download finishes, you can load it up using `require()` like we showed earlier. When loading modules with the `require()` method, you just use the name of the module (don't include the `.js`).  Here's an example:
 
 
 ```js
@@ -31,7 +31,7 @@ console.log(myCowsArray[0]);
      Cow
 *//
 ```
-Of course, this is just an example. Most modules on npm are a little more useful than this one. But the main point is that installing a module only takes a few seconds if you're using npm.
+Of course, this is just an example. Most modules on npm are a little more useful than this one. But key here is that you can go from seeing a module you having it installed and running within a few seconds.
 
 ### Getting fancy with npm
 To make things easier, it's important to keep track of which things you've installed with npm so far. For example, if multiple people are working on a single project, you all need to keep a list of which versions of which modules are being used. Luckily, npm can be told to track this automatically. Here's now:
@@ -55,9 +55,9 @@ npm install
 ```
 ### What kinds of modules are there?
 
-There's honestly a module for almost anything. If you can imagine it, it probably exists. As of right now, there's almost 500,000 modules uploaded on npm. Here's some of the most popular ones if you're curious:
+There's honestly a module for almost anything. If you can imagine it, it probably exists. As of right now, there's almost 500,000 modules uploaded on npm. Here's some of the most popular ones:
 
-* [Express](https://www.npmjs.com/package/express) is an incredibly popular framework. We'll be covering this later.
+* [Express](https://www.npmjs.com/package/express) is an incredibly popular web framework. We'll be covering this later.
 * [Request](https://www.npmjs.com/package/request) is a module that makes sending HTTP requests to other servers pretty easy
 * [NodeMon](https://www.npmjs.com/package/nodemon) is a tool that restarts your node project automatically when changes are made. This can save you a lot of time!
 * [Gulp](https://www.npmjs.com/package/gulp) is a task-runner tool. It's useful for when you want to set up some tasks to run on your code (for example, maybe you want to spellcheck your files every time you save them).

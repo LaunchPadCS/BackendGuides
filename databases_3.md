@@ -1,11 +1,11 @@
 ## Mongoose
 
-Applications don't work with MongoDB using the shell we discussed in the last section. Instead, they use one of many helper libraries to work with the data. Mongoose is one popular mongoDB library for nodeJS, and we'll be explaining the basics in this article.
+Applications don't work with MongoDB using the shell we discussed in the last section. Instead, they use one of many helper libraries to work with the data. Mongoose is one popular mongoDB library for node, and we'll be explaining the basics in this section.
 
 ### Mongoose Basics
 Mongoose is an npm module that makes it easy to work with mongoDB inside nodeJS. Installing it is as easy as using any other npm module; you can just run `npm install mongoose`.
 
-When using mongoose, we define a `schema` for each collection we want to create. The schema is like a blueprint that lets mongoose know what information we want to safe. You specify the type and name of each field you want to include. Then we convert the schema into a `model`, which is an object that lets us easily work the collection.
+When using mongoose, we define a `schema` for each collection we want to create. The schema is like a blueprint that lets mongoose know what information we want to save. You specify the type and name of each field you want to include. Then we convert the schema into a `model`, which is an object that lets us easily work with the collection.
 
 Here's how you could define a schema for a collection that would keep track of some cats:
 
@@ -63,7 +63,7 @@ CatModel.find({age: 5},function(err,cats) {
    if(err) {
        console.log(err); //Something went wrong!
    } else {
-       //The 'cats' variable contains a list of all the cats
+       //The 'cats' variable contains a list of all the cats who are age 5
        for(var i=0; i < cats.length; i++) {
 	      //Print a message for each cat in the database
 	      console.log("Found a cat: " + cats[i].name)
@@ -89,7 +89,9 @@ var catSchema = new mongoose.Schema({
 });
 ```
 
+For validation to work, you just include a list of requirements along with the error to throw if that requirement isn't met. For example, if we tried to save a cat without an age, we would see the "Missing Age!" error.
+
 
 ### Recommended Reading
 
-* [The Official Mongoose Guide](http://mongoosejs.com/) 
+* [The Official Mongoose Guide](http://mongoosejs.com/)
